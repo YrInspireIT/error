@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Maintenance</title>
+    <!-- Link to Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Define Theme Color */
+        :root {
+            --theme-bg-color: #eff3ff; /* Light blue background */
+            --text-color: #334155;     /* Dark grayish-blue text */
+            --accent-color: #4cc9f0;   /* Indigo for button */
+            --icon-color: #64748b;     /* Slate for icon */
+        }
+
+        /* Basic Reset and Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--theme-bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden; /* Hide overflow from animations if needed */
+        }
+
+        /* Main Content Container */
+        .maintenance-container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            opacity: 0; /* Start hidden for fade-in */
+            transform: translateY(20px); /* Start slightly lower for slide-up */
+            animation: fadeInSlideUp 0.8s 0.3s ease-out forwards; /* Animation */
+        }
+
+        /* Icon Styling and Animation */
+        .maintenance-icon {
+            font-size: 4rem; /* Larger icon */
+            color: var(--icon-color);
+            margin-bottom: 25px;
+            display: inline-block; /* Needed for animation */
+            animation: spin 4s linear infinite; /* Spinning animation */
+        }
+
+        /* Heading and Paragraph Styling */
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Footer "Powered by" Styling */
+        .footer-info {
+            font-size: 0.9rem;
+            color: #64748b; /* Lighter text */
+            margin-top: 35px;
+            opacity: 0; /* Fade in later */
+            animation: fadeIn 1s 1s ease-in forwards;
+        }
+
+        /* Home Button Styling */
+        .home-button {
+            display: inline-flex; /* Align icon and text nicely */
+            align-items: center;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px; /* Space above footer */
+            opacity: 0; /* Fade in */
+            animation: fadeIn 1s 0.8s ease-in forwards;
+        }
+
+        .home-button i {
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        .home-button:hover {
+            background-color: #4338ca; /* Darker indigo on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        /* Keyframe Animations */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+         @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .maintenance-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .maintenance-icon {
+                font-size: 3rem;
+            }
+            .home-button {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="maintenance-container">
+        <!-- Animated Maintenance Icon -->
+        <i class="fas fa-cogs maintenance-icon"></i> <!-- Using Font Awesome cog icon -->
+
+        <!-- Main Message -->
+        <h1>Server is Under Maintenance!</h1>
+        <p>We're performing some essential updates. Please check back later.</p>
+
+        <!-- Home Button -->
+        <a href="https://yrinspireit.github.io/" class="home-button"> <!-- Link to your homepage '#' is a placeholder -->
+            <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+            Home
+        </a>
+
+        <!-- Footer Info -->
+        <div class="footer-info">
+            Powered by: Your Inspire IT
+        </div>
+    </div>
+
+    <!-- No JavaScript needed for this specific setup -->
+
+</body>
+  </html>
